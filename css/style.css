@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+@media print {
+  .info {
+    display: none !important;
+  }
+  #wrapper {
+    padding: 0px;
+  }
+  .ui-resizable-handle {
+    display: none !important;
+  }
+}
+
+@page { size:8.5in 11in; margin: 0.25cm }
+
+* {
+  transition: none;
+}
+
+body, html, #wrapper {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: silver;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+}
+
+.inner {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #31C4F3;
+  text-decoration: none;
+}
+
+.section p {
+  margin: 0;
+  padding: 0;
+}
+
+h1 a, h2 a, h3 a {
+  color: #000;
+}
+
+.section {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  min-width: 200px;
+  min-height: 100px;
+  max-height: 800px;
+  padding: 10px 15px;
+  margin: 10px;
+}
+
+.gd-default .section {
+  background: white;
+}
+
+.section:hover {
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.25);
+}
+
+.section.note h1,
+.section.note h2,
+.section.note h3,
+.section.note h4,
+.section.note h5,
+.section.note h6 {
+    padding: 0;
+    margin: 0;
+}
+
+.reference .handle-heading {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.handle-heading {
+  z-index: 1;
+  cursor: move;
+  text-align: center;
+}
+
+.section a.handle {
+    color: grey;
+    padding-right: 6px;
+    font-weight: bold;
+}
+
+.note ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-family: serif;
+}
+
+.section.note {
+  font-family: "Indie Flower", serif;
+  background: burlywood;
+  mix-blend-mode: color-burn;
+}
+
+a.n-reference {
+  background: burlywood;
+  mix-blend-mode: color-burn;
+}
+
+.content a {
+  color: #000;
+  font-style: italic;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+
+.notenum-1 {
+  color: #784421;
+  background-color: #f4e3d7;
+}
+
+.notenum-2 {
+  color: #003380;
+  background-color: #d5e5ff;
+}
+
+.notenum-3 {
+  color: #225500;
+  background-color: #e3f4d7;
+}
+
+/* Section interaction icons */
+
+.section .icon {
+  position: absolute;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: black;
+  color: white;
+  font-family: monospace;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.75em;
+  mix-blend-mode: overlay;
+  cursor: pointer;
+  opacity: 0.25;
+}
+
+.section .icon:hover {
+  opacity: 1;
+}
+
+.section .icon.delete {
+  top: -1em;
+  left: -1em;
+}
+
+.section .icon.resize {
+  bottom: -1em;
+  right: -1em;
+}
+
+.section .icon.rotate {
+  display: none;
+}
+
+/* Connections */
+
+connection {
+   border: 4px solid burlywood;
+   opacity: 0.5;
+   z-index: 1;
+   border-radius:100%;
+   pointer-events:none;
+   mix-blend-mode: color-burn;
+}
+
+/* Editor */
+#custom .editor {
+  position: absolute;
+  width: 400px;
+  background: black;
+  border: 3px double rgba(255,255,255,0.5);
+  box-shadow: inset 0 0 50px rgba(255,255,255,0.5);
+  margin: 12px;
+  color: white;
+  mix-blend-mode: normal;
+  z-index: 50;
+}
+
+#custom .editor .editor-content {
+  height: calc(100% - 20px);
+}
+
+#custom .editor .editor-content,
+#custom .editor .editor-heading {
+  font-size: 100%;
+  padding: 10px;
+  width: calc(100% - 20px);
+  resize: both;
+  background: none;
+  color: white;
+  border: 0;
+  outline: 1px solid rgba(255,255,255,0.5);
+}
+
+/* ------------------------------------------------------------------------ */
+
+.info {
+  color: #ddd;
+}
+
+.info .app-title {
+  text-shadow: 1px 1px 2px black;
+  padding: 10px 2px;
+}
+
+.info .app-title::first-letter {
+  background-color: burlywood;
+  border-radius: 5px;
+  padding: 0em 0.25em 0em 0.25em;
+}
+
+.info .toc a {
+  text-decoration: none;
+  color: burlywood;
+}
+
+.info .toc a:hover {
+  color: #fff;
+}
+
+.info .hide {
+  color: burlywood;
+}
+
+.info .hide:hover {
+  color: #fff;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0.2);
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    /* border: solid whiteSmoke 4px; */
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
